@@ -1,0 +1,28 @@
+{
+  "name": "app-server",
+  "version": "1.0.0",
+  "description": "server para o projeto da INF-332/2015",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mbernardino/engsoft2015-grupo8-inf332"
+  },
+  "keywords": [
+    "hackathon",
+    "INF332/2015",
+    "-Grupo08-",
+    "Unicamp"
+  ],
+  "author": "Grupo08",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mbernardino/engsoft2015-grupo8-inf332/issues"
+  },
+  "homepage": "https://github.com/mbernardino/engsoft2015-grupo8-inf332",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
