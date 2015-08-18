@@ -1,12 +1,12 @@
 {
-    "name":"twitter-api-node-express",
-    "description":"Twitter JS Client Hooked in with Node and Express",
+    "name":"flagrapp-server",
+    "description":"Módulo server do aplicativo flagrApp",
     "version":"0.1.0",
-    "author" : "Jacob Carter",
+    "author" : "Pier 8",
     "dependencies" : {
         "twitter-js-client" : "*",
         "body-parser": "^1.12.2",
     	"express": "^4.12.3"
     },
-    "license": "MIT"
+    "license": "Unicamp"
 }
