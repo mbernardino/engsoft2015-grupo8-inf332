@@ -8,10 +8,10 @@ app.use(bodyParser.json());
  
 //Vamos criar um twitter senão cada postagem vai no meu nome
 var client = new Twitter({
-    "consumer_key": "ZecuEql8VjfO8JR8UgqijrdFx",
-    "consumer_secret": "FR7Bwjm6QzCcL94HyoRqUasq4QPLruYUMPAYl62mMnxhu3c31P",
-    "access_token_key": "177197255-UIfvD8I7aA3OPwTjIWvgISlVfhxUGoGWGrVhRlQa",
-    "access_token_secret": "RlaMvDafQLZEDiCG8SbEJXYLB8dLTGbk2Tf8PsmmYjnTt"
+    "consumer_key": "164BTa2LeyIMnOhXGFeDmnGbT",
+    "consumer_secret": "YaJ6Xqw6yqSpWVaZFJ20nPeh3WaxFzUVoIsKHCSpWpHeM6Ik4J",
+    "access_token_key": "3430114486-WjMHKawuKgSzh12EtR7VXUVJ1x91AnbEVagCkdG",
+    "access_token_secret": "3Xv8WZ5UUo04zcC6HUvBdtKMiliLWtBHDvnurgJFsaQm0"
 });
 
 var router = express.Router();
