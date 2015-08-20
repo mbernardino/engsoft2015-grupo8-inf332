@@ -1,0 +1,42 @@
+angular.module('flagrApp',
+    [
+	'ui.router'
+	'flagra'
+	
+])
+    .run(
+      [          '$rootScope', '$state', '$stateParams', 'Config', '$location',
+        function ($rootScope,   $state,   $stateParams, Config, $location) {
+            $rootScope.$state = $state;
+            $rootScope.$stateParams = $stateParams;
+            $rootScope.$on('$stateChangeStart', function(e, toState, toParams, fromState, fromParams) {
+                Config.setUrl($location.absUrl().substring(0,$location.absUrl().indexOf('#')-1));
+            });
+        }
+      ]
+    )
+
+    .config(
+      [          
+	'$stateProvider', '$urlRouterProvider', '$locationProvider',
+        function ($stateProvider,   $urlRouterProvider,   $locationProvider) {
+          $locationProvider.html5Mode(false);
+          $urlRouterProvider.when('', '/');
+          $urlRouterProvider.otherwise('/404');
+
+          $stateProvider
+
+            .state("main", {
+              url: "/",
+              views: {
+                '': {templateUrl: 'views/main/main-content.html'},
+              }
+            })
+
+
+
+
+
+      ]
+    );
+
