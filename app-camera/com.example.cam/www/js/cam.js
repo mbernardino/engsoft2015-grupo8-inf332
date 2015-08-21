@@ -1,4 +1,4 @@
-var pictureSource;   // picture source
+    var pictureSource;   // picture source
     var destinationType; // sets the format of returned value
 
     // Wait for device API libraries to load
@@ -17,19 +17,9 @@ var pictureSource;   // picture source
     function onPhotoDataSuccess(imageData) {
       // Uncomment to view the base64-encoded image data
       // console.log(imageData);
-
-      // Get image handle
-      //
-      var smallImage = document.getElementById('smallImage');
-
-      // Unhide image elements
-      //
-      smallImage.style.display = 'block';
-
-      // Show the captured photo
-      // The in-line CSS rules are used to resize the image
-      //
-      smallImage.src = "data:image/jpeg;base64," + imageData;
+      //changeDisplays receives list or photo
+      changeDisplays("photo");
+      setImageIntoForm(imageData);
     }
 
     // Called when a photo is successfully retrieved
@@ -80,5 +70,28 @@ var pictureSource;   // picture source
     // Called if something bad happens.
     //
     function onFail(message) {
-      alert('Failed because: ' + message);
+      //alert('Failed because: ' + message);
+      Materialize.toast(message, 4000);
+    }
+
+
+    function changeDisplays(type) {
+      switch(type) {
+        case "list":
+          $("#body-photo").css("display","none");
+          $("#body-list").css("display","block");
+        break;
+        case "photo":
+          $("#body-list").css("display","none");
+          $("#body-photo").css("display","block");
+        break;
+      }
+    }
+
+    function setImageIntoForm(imageData) {
+      var smallImage = document.getElementById('smallImage');
+      // Show the captured photo
+      // The in-line CSS rules are used to resize the image
+      //
+      smallImage.src = "data:image/jpeg;base64," + imageData;
     }

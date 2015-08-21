@@ -15,15 +15,15 @@
   <body>
 
     <div class="navbar-fixed">
-    <nav>
+    <nav class="blue darken-2">
         <a href="#" class="brand-logo center"><b>FLAGRA</b>pp</a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
+          <li><a href="#!">Sair</a></li>
+          <!--<li><a href="#!">Second Sidebar Link</a></li>-->
         </ul>
         <ul id="slide-out" class="side-nav">
-          <li><a href="#!">First Sidebar Link</a></li>
-          <li><a href="#!">Second Sidebar Link</a></li>
+          <li><a href="#!">Sair</a></li>
+          <!--<li><a href="#!">Second Sidebar Link</a></li>-->
         </ul>
         <a href="#" data-activates="slide-out" 
            class="waves-effect waves-light button-collapse">
@@ -32,7 +32,9 @@
     </nav>
     </div>
 
-    <div class="center-align">
+
+    <!-- BODY LIST -->
+    <div class="center-align" id="body-list">
 
       <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
         <a class="waves-effect waves-light btn-floating btn-large red" onclick="capturePhoto();">
@@ -46,37 +48,27 @@
         </ul>-->
       </div>
 
-      <div class="col s12">
-        <ul class="tabs">
-          <li class="tab col s3"><a class="active" href="#test2">Mais Curtidas</a></li>
-          <li class="tab col s3"><a href="#test4">Ranking</a></li>
-        </ul>
-      </div>
-      <div id="test4" class="col s12">
-        <button onclick="capturePhoto();">Capture Photo</button> <br>
+        <!--<button onclick="capturePhoto();">Capture Photo</button> <br>
         <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
         <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
         <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
         <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
-        <img style="display:none;" id="largeImage" src="" />
-      </div>
-
-      <div id="test2" class="col s12">
+        <img style="display:none;" id="largeImage" src="" />-->
 
         <div class="row">
         <div class="col s12 m7">
           <div class="card">
             <div class="card-image">
               <img src="http://materializecss.com/images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
+              <span class="card-title">#TipoFlagra</span>
             </div>
-            <div class="card-content">
+            <!--<div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
-            </div>
+            </div>-->
           </div>
         </div>
         </div>
@@ -86,35 +78,66 @@
           <div class="card">
             <div class="card-image">
               <img src="http://materializecss.com/images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
+              <span class="card-title">#TipoFlagra</span>
             </div>
-            <div class="card-content">
+            <!--<div class="card-content">
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
-            </div>
+            </div>-->
           </div>
         </div>
         </div>
-
+  </div>
+  
+  <!-- BODY LIST -->
+  <div calss="center-align" id="body-photo" style="display:none;">
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card large">
+          <div class="card-image">
+            <img src="" id="smallImage">
+          </div>
+          <div>
+            <div class="input-field col s12" style="z-index:9999px;">
+              <select>
+                <option value="" disabled selected>Tipo do Flagra</option>
+                <option value="1">Option 1</option>
+                <option value="2">Option 2</option>
+                <option value="3">Option 3</option>
+              </select>
+            </div>
+          </div>
+          <div class="card-action">
+              <a class="waves-effect waves-light btn" id="btnCancelPhoto">Cancelar</a>
+              <a class="waves-effect waves-light btn" id="btnPostPhoto">Postar</a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-    
 
     <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <!-- Compiled and minified JavaScript -->
-    <script src="js/materialize.js"></script>
+  <script src="js/materialize.js"></script>
 
-    <script type="text/javascript">
+  <script type="text/javascript">
     $(".button-collapse").sideNav();
     $(document).ready(function(){
-      $('ul.tabs').tabs();
-    });
-    </script>
+      $('select').material_select();
 
-  </body>
-  </html>
+      $("#btnCancelPhoto").click(function(){
+        changeDisplays("list");
+      });
+
+      $("#btnPostPhoto").click(function(){
+        Materialize.toast("Vou implementar esta function", 4000);
+      });
+    });
+  </script>
+
+</body>
+</html>
